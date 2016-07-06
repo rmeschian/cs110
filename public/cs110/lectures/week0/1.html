@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=1024, user-scalable=no">
+        <meta name="author" content="Rouben Meschian">
+        <title>CS110</title>
+
+        <link rel="stylesheet" href="../../css/main.css">
+
+    </head>
+    <body class="deck-container">
+
+        <div class="navButtonBar">
+            <a href="javascript:void(0)" class="backBtn btn btn-default btn-sm">Back</a>
+            <a href="javascript:void(0)" class="forwardBtn btn btn-default btn-sm">Forward</a>
+            <a href="../../index.html" class=" btn btn-default btn-sm">Home</a>
+        </div>
+
+
+        <!-- Begin slides. Just make elements with a class of slide. -->
+
+
+        <section class="slide">
+            <h1>CS110</h1>
+            <h2>Introduction to Computer Science</h2>
+        </section>
+
+        <section class="slide">
+            <textarea style="width: 99%; height: 350px">
+ 1. pick up phone book
+ 2. open to middle of phone book
+ 3. look at names
+ 4. if "Smith" is among names
+ 5.    call Mike
+ 6. else if "Smith" is earlier in book
+ 7.    open to middle of left half of book
+ 8.    go to line 3
+ 9. else if "Smith" is later in book
+10.    open to middle of right half of book
+11.    go to line 3
+12. else
+13.    give up
+            </textarea>
+        </section>
+
+        <section class="slide">
+            <h1>Javascript</h1>
+        </section>
+
+
+        <section class="slide">
+            <h2>Values</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+alert('hello cs110');
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2>Values</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    // number
+    console.log(110);
+
+    // boolean (true/false)
+    console.log(true);
+    console.log(false);
+
+    // string
+    console.log('cs110');
+    console.log(typeof('cs110'));
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+
+            <div class="slide-notes">
+                <h2>Notes</h2>
+                <ol>
+                    <li>Numbers (e.g. 1, 2, 3)</li>
+                    <li>strings (e.g. 'hello world')</li>
+                    <li>booleans (e.g. true, false)</li>
+                    <li>Use typeof to check the type of a value</li>
+                </ol>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Math operators</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    console.log((2 + 3) * 22);
+    console.log('CS' + 110);
+    console.log('CS' * 100);
+    console.log(isNaN('CS' * 100));
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+
+            <div class="slide-notes">
+                <h2>Notes</h2>
+                <ol>
+                    <li>Math operators: +, -, *, /</li>
+                    <li>Can group things with '(' and ')' e.g. (1 + 2) * 3</li>
+                    <li>+ can be used to concatenate</li>
+                    <li>NaN means not a number - use isNaN to check</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2>Comparing values</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    console.log(1 === 1);  // check if equal (returns true/false)
+    console.log(1 !== 1);  // check if not equal (returns true/false)
+    console.log(1 < 2);    // check if less than (returns true/false)
+    console.log(1 <= 2);   // check if less than or equal (returns true/false)
+    console.log(1 > 2);    // check if greater than (returns true/false)
+    console.log(1 >= 2);   // check if greater than or equal (returns true/false)
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+            <div class="slide-notes">
+                <h2>Notes</h2>
+                <ol>
+                    <li>===, !==, >, <, >=, <=</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2>Named values (variables)</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    let a = 'hello world'; // create a variable, put a string into it
+    console.log(a);        // print the string
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+            <div class="slide-notes">
+                <h2>Notes</h2>
+                <ol>
+                    <li>variable: using a name to refer to a value</li>
+                    <li>create a variable using 'let'</li>
+                    <li>put a value into it using '='</li>
+                </ol>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Boolean operators</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    console.log(true && true);     // && means AND
+    console.log(false || true);    // || means OR
+    console.log(!(false && true)); // ! means NOT
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+            <div class="slide-notes">
+                <h2>Notes</h2>
+                <ol>
+                    <li>&& means AND</li>
+                    <li>|| means OR</li>
+                    <li>! means NOT</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2>Truethy/Falsey</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    console.log(!'hello world');
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Conditionals</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    let a = 1;
+    let b = 2;
+
+    if(a === b) {
+        console.log('a is the same as b');
+    } else if(a > b) {
+        console.log('a is greater than b');
+    } else {
+        console.log('a is less than b');
+    }
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h1>Rouben Meschian</h1>
+            <h4>rmeschian@gmail.com</h4>
+        </section>
+
+        <!-- End slides. -->
+
+
+        <script data-main="../../js/main" src="../../bower_components/requirejs/require.js"></script>
+
+    </body>
+</html>
