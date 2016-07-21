@@ -1,4 +1,4 @@
-@import "../bower_components/bootstrap/dist/css/bootstrap.css";
+/*@import "../bower_components/bootstrap/dist/css/bootstrap.css";*/
 @import url("../js/lib/codemirror/theme/vibrant-ink.css");
 @import url("../js/lib/codemirror/lib/codemirror.css");
 
@@ -21,10 +21,26 @@ iframe {
 }
 
 
-
 /* DECK */
 
 
+.deck-container .codeEditor {
+    display: flex;
+    flex-wrap: wrap;
+}
+.deck-container .codeEditor > div {
+    flex: 1;
+}
+.deck-container .codeEditor iframe {
+    min-height: auto !important;
+}
+.deck-container .codeEditor .codeEditor_editor {
+    margin-right: 10px;    
+}
+.deck-container .codeEditor .codeEditor_target {
+    padding: 10px 15px;
+    background-color: white;
+}
 
 .deck-container {
     /*font-family: "Helvetica Neue", sans-serif;*/
@@ -61,6 +77,18 @@ iframe {
     /*position: relative;*/
     /*z-index: auto;*/
     /* http://nicolasgallagher.com/css-drop-shadows-without-img/ */
+}
+.deck-container .slide.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.deck-container .slide.header {
+    color: #4987ea;
+}
+.slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6 {
+    font-weight: 100;
 }
 .borderradius .deck-container .slide pre {
     -webkit-border-radius: 5px;

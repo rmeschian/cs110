@@ -7,45 +7,56 @@
         <meta name="author" content="Rouben Meschian">
         <title>CS110</title>
 
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../../../../node_modules/materialize-css/bin/materialize.css">
         <link rel="stylesheet" href="../../css/main.css">
+
+        <link rel="stylesheet" href="../../js/lib/codemirror/theme/material.css">
 
     </head>
     <body class="deck-container">
 
         <div class="navButtonBar">
-            <a href="javascript:void(0)" class="backBtn btn btn-default btn-sm">Back</a>
-            <a href="javascript:void(0)" class="forwardBtn btn btn-default btn-sm">Forward</a>
-            <a href="../../index.html" class=" btn btn-default btn-sm">Home</a>
+            <a href="javascript:void(0)" class="backBtn btn btn-default btn-sm"><i class="material-icons left">keyboard_arrow_left</i>Back</a>
+            <a href="javascript:void(0)" class="forwardBtn btn btn-default btn-sm">Forward<i class="material-icons right">keyboard_arrow_right</i></a>
+            <a href="../../index.html" class="btn btn-default btn-sm"><i class="material-icons left">home</i>Home</a>
         </div>
 
 
         <!-- Begin slides. Just make elements with a class of slide. -->
 
 
-        <section class="slide">
+        <section class="slide header center">
             <h1>CS110</h1>
             <h2>Introduction to Computer Science</h2>
         </section>
 
         <section class="slide">
-            <textarea style="width: 99%; height: 350px">
- 1. pick up phone book
- 2. open to middle of phone book
- 3. look at names
- 4. if "Smith" is among names
- 5.    call Mike
- 6. else if "Smith" is earlier in book
- 7.    open to middle of left half of book
- 8.    go to line 3
- 9. else if "Smith" is later in book
-10.    open to middle of right half of book
-11.    go to line 3
-12. else
-13.    give up
-            </textarea>
+            <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="textarea1" class="materialize-textarea">
+          1. pick up phone book
+          2. open to middle of phone book
+          3. look at names
+          4. if "Smith" is among names
+          5.    call Mike
+          6. else if "Smith" is earlier in book
+          7.    open to middle of left half of book
+          8.    go to line 3
+          9. else if "Smith" is later in book
+         10.    open to middle of right half of book
+         11.    go to line 3
+         12. else
+         13.    give up</textarea>
+                    </div>
+                  </div>
+                </form>
+              </div>
         </section>
 
-        <section class="slide">
+        <section class="slide header center">
             <h1>Javascript</h1>
         </section>
 
@@ -54,9 +65,9 @@
             <h2>Values</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
-				<textarea>
-alert('hello cs110');
-				</textarea>
+    				<textarea>
+    alert('hello cs110');
+    				</textarea>
                 </div>
                 <hr/>
                 <div class="codeEditor_target"></div>
@@ -68,18 +79,18 @@ alert('hello cs110');
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
-<script>
-    // number
-    console.log(110);
+                    <script>
+                        // number
+                        console.log(110);
 
-    // boolean (true/false)
-    console.log(true);
-    console.log(false);
+                        // boolean (true/false)
+                        console.log(true);
+                        console.log(false);
 
-    // string
-    console.log('cs110');
-    console.log(typeof('cs110'));
-</script>
+                        // string
+                        console.log('cs110');
+                        console.log(typeof('cs110'));
+                    </script>
 				</textarea>
                 </div>
                 <hr/>
@@ -243,7 +254,7 @@ alert('hello cs110');
         </section>
 
 
-        <section class="slide">
+        <section class="slide header center">
             <h1>Rouben Meschian</h1>
             <h4>rmeschian@gmail.com</h4>
         </section>

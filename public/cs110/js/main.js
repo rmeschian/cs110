@@ -5,6 +5,7 @@ require.config({
         text             : "../bower_components/require/text",
         jquery           : "../bower_components/jquery/dist/jquery",
         hasher           : "lib/hasher",
+        materialize      : "../bower_components/Materialize/bin/materialize",
         codemirror       : "lib/codemirror/lib/codemirror",
         xmlMod           : "lib/codemirror/mode/xml/xml",
         jsMod            : "lib/codemirror/mode/javascript/javascript",
@@ -15,6 +16,9 @@ require.config({
     shim  : {
         xmlMod           : {
             deps : ["codemirror"]
+        },
+        materialize: {
+            deps: ['jquery']
         },
         jsMod            : {
             deps : ["codemirror"]
@@ -36,6 +40,7 @@ require.config({
 require([
     "hasher",
     "jquery",
+    "materialize",
     "codemirror",
     "xmlMod",
     "jsMod",
@@ -65,7 +70,7 @@ require([
             defaultStyles  : ['../../bower_components/bootstrap/dist/css/bootstrap.css'],
             defaultScripts : ["../../bower_components/jquery/dist/jquery.js"],
 
-            theme          : "vibrant-ink"
+            theme          : "material"
         });
 
 
