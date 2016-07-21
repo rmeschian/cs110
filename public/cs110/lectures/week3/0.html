@@ -28,194 +28,19 @@
         </section>
 
         <section class="slide">
-            <textarea style="width: 99%; height: 350px">
- 1. pick up phone book
- 2. open to middle of phone book
- 3. look at names
- 4. if "Smith" is among names
- 5.    call Mike
- 6. else if "Smith" is earlier in book
- 7.    open to middle of left half of book
- 8.    go to line 3
- 9. else if "Smith" is later in book
-10.    open to middle of right half of book
-11.    go to line 3
-12. else
-13.    give up
-            </textarea>
+            <h1>Cryptography</h1>
         </section>
 
         <section class="slide">
-            <h1>Javascript</h1>
+            <h1>Caesar Cipher</h1>
+            <h2><p><em>c<sub>i</sub></em> = (<em>p<sub>i</sub></em> + <em>k</em>) % 26</p></h2>
+            <ul>
+                <li>k: secret key</li>
+                <li>p: original text</li>
+                <li>c: ciphered text</li>
+            </ul>
         </section>
 
-
-        <section class="slide">
-            <h2>Values</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-alert('hello cs110');
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <h2>Values</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    // number
-    console.log(110);
-
-    // boolean (true/false)
-    console.log(true);
-    console.log(false);
-
-    // string
-    console.log('cs110');
-    console.log(typeof('cs110'));
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-
-            <div class="slide-notes">
-                <h2>Notes</h2>
-                <ol>
-                    <li>numbers (e.g. 1, 2, 3)</li>
-                    <li>strings (e.g. 'hello world')</li>
-                    <li>booleans (e.g. true, false)</li>
-                    <li>Use typeof to check the type of a value</li>
-                </ol>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Math operators</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    console.log((2 + 3) * 22);
-    console.log('CS' + 110);
-    console.log('CS' * 100);
-    console.log(isNaN('CS' * 100));
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-
-            <div class="slide-notes">
-                <h2>Notes</h2>
-                <ol>
-                    <li>Math operators: +, -, *, /</li>
-                    <li>Can group things with '(' and ')' e.g. (1 + 2) * 3</li>
-                    <li>+ can be used to concatenate</li>
-                    <li>NaN means not a number - use isNaN to check</li>
-                </ol>
-            </div>
-        </section>
-
-        <section class="slide">
-            <h2>Comparing values</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    console.log(1 === 1);  // check if equal (returns true/false)
-    console.log(1 !== 1);  // check if not equal (returns true/false)
-    console.log(1 < 2);    // check if less than (returns true/false)
-    console.log(1 <= 2);   // check if less than or equal (returns true/false)
-    console.log(1 > 2);    // check if greater than (returns true/false)
-    console.log(1 >= 2);   // check if greater than or equal (returns true/false)
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-            <div class="slide-notes">
-                <h2>Notes</h2>
-                <ol>
-                    <li>===, !==, >, <, >=, <=</li>
-                </ol>
-            </div>
-        </section>
-
-        <section class="slide">
-            <h2>Named values (variables)</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let a = 'hello world'; // create a variable, put a string into it
-    console.log(a);        // print the string
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-            <div class="slide-notes">
-                <h2>Notes</h2>
-                <ol>
-                    <li>variable: using a name to refer to a value</li>
-                    <li>create a variable using 'let'</li>
-                    <li>put a value into it using '='</li>
-                </ol>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Boolean operators</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    console.log(true && true);     // && means AND
-    console.log(false || true);    // || means OR
-    console.log(!(false && true)); // ! means NOT
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-            <div class="slide-notes">
-                <h2>Notes</h2>
-                <ol>
-                    <li>&& means AND</li>
-                    <li>|| means OR</li>
-                    <li>! means NOT</li>
-                </ol>
-            </div>
-        </section>
-
-        <section class="slide">
-            <h2>Truethy/Falsey</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    console.log(!'hello world');
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
 
 
         <section class="slide">
@@ -242,6 +67,223 @@ alert('hello cs110');
             </div>
         </section>
 
+
+        <section class="slide">
+            <h2>Function</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    // make a function, put it into a variable
+    let a = function() {
+        console.log('CS110');
+        console.log('Introduction to CS');
+        console.log('AUA');
+    };
+
+    a(); // call the function
+    a(); // call the function again
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+
+            <div class="slide-notes">
+                <h2>Notes</h2>
+                <ol>
+                    <li>code packaged up for reuse</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2>Function(with inputs)</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    // make a function, put it into a variable
+    let a = function(a, b) {
+        console.log(a + b);
+    };
+
+    a(1, 2);     // call the function
+    a(100, 120); // call the function again
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Function(with inputs) that return outputs</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    // make a function, put it into a variable
+    let add = function(a, b) {
+        return a + b;
+    };
+
+    // call the function, put result into a variable
+    let result = add(1, 2);
+
+    // print the result
+    console.log(result);
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Printing 1 - 10</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    console.log(1);
+    console.log(2);
+    console.log(3);
+    console.log(4);
+    console.log(5);
+    console.log(6);
+    console.log(7);
+    console.log(8);
+    console.log(9);
+    console.log(10);
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2>Printing 1 - 10 using a function</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    let printNumbers = function(count) {
+        if(count > 10) // termination condition
+            return;
+
+        console.log(count);
+        printNumbers(count + 1); // call self (loop)
+    };
+    printNumbers(1);
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2>Function variable scoping</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    let f = function(a) {
+        let f2 = function(b) {
+            return a + b;
+        };
+        return f2(2);
+    };
+    console.log(f(1));
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Functions are values</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    let f = function(a, b, f2) {
+        f2(a + b);
+    };
+
+    f(2, 10, function(result) {
+       console.log(result);
+    });
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+
+        <section class="slide">
+            <h2>Functions are values 2</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    let f = function(a) {
+        return function(b) {
+            return a + b;
+        };
+    };
+    let f2 = f(1);
+    console.log(f2(3));
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Functions are composable</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    let pow = function(base, exponent) {
+        if(exponent === 0) {
+            return 1;
+        }
+
+        return base * pow(base, exponent-1);
+    };
+
+    let circleArea = function(r) {
+        return 3.14159265359 * pow(r, 2);
+    };
+
+    console.log(circleArea(10));
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
 
         <section class="slide">
             <h1>Rouben Meschian</h1>

@@ -27,57 +27,61 @@
             <h2>Introduction to Computer Science</h2>
         </section>
 
-
         <section class="slide">
-            <h1>Objects</h1>
+            <h1>Canvas</h1>
         </section>
 
+
         <section class="slide">
-            <h2>Object - place to store data</h2>
+            <h2>Canvas 2D - Draw a rectangle</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
+<canvas id="canvas" width="500" height="300"></canvas>
+
 <script>
-    let data = {
-        name         : 'Rouben Meschian',
-        age          : 35,
-        organization : {
-            name    : 'American University of Armenia',
-            city    : 'Yerevan',
-            country : 'Armenia'
-        }
+	let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+
+    context.fillStyle = 'red';
+    context.fillRect(10, 10, 50, 50);
+
+    context.strokeStyle = 'green';
+    context.strokeRect(100, 10, 50, 50);
+</script>
+				</textarea>
+                </div>
+                <hr/>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Canvas 2D - Draw data</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<canvas id="canvas" width="500" height="300"></canvas>
+
+<script>
+	let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+
+    let point = {
+        x      : 10,
+        y      : 10,
+        width  : 50,
+        height : 50,
+        color  : 'red'
     };
 
-    console.log(data.organization.name);
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Object - grouping of functions</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let Math = {
-        pow        : function(base, exponent) {
-            if(exponent === 0) {
-                return 1;
-            }
-
-            return base * Math.pow(base, exponent - 1);
-        },
-        circleArea : function(r) {
-            return 3.14159265359 * Math.pow(r, 2);
-        }
+    let draw = function() {
+        context.fillStyle = point.color;
+        context.fillRect(point.x, point.y, point.width, point.height);
     };
 
-    console.log(Math.circleArea(10));
+    draw();
 </script>
 				</textarea>
                 </div>
@@ -85,143 +89,6 @@
                 <div class="codeEditor_target"></div>
             </div>
         </section>
-
-
-        <section class="slide">
-            <h1>Arrays (lists)</h1>
-        </section>
-
-        <section class="slide">
-            <h2>Array</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let list = [1, 2, 3, 4, 5];  // create a list
-    console.log(list.length);    // print the length of the list
-    console.log(list[2]);        // print a value at a specific index
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-
-            <div class="slide-notes">
-                <h2>Notes</h2>
-                <ol>
-                    <li>indexes start with 0</li>
-                    <li>.length is the last index + 1</li>
-                </ol>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Array - recursion</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let myList = [1, 2, 3, 4, 5];  // create a list
-    var print = function(index, list) {
-        if(index === list.length)
-            return;
-        console.log(list[index]);
-        print(index + 1, list);
-    };
-    print(0, myList);
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Array - forEach</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let myList = [1, 2, 3, 4, 5];  // create a list
-    myList.forEach(function(value, index) {
-       console.log(value);
-    });
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Array - map</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let myList = [1, 2, 3, 4, 5];  // create a list
-    let newList = myList.map(function(value, index) {
-        return value * 100;
-    });
-    newList.forEach(function(value, index) {
-        console.log(value);
-    });
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Array - filter</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let myList = [1, 2, 3, 4, 5];  // create a list
-    let newList = myList.filter(function(value, index) {
-        return value > 3;
-    });
-    newList.forEach(function(value, index) {
-        console.log(value);
-    });
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Array - reduce</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let myList = [1, 2, 3, 4, 5];  // create a list
-    let sum = myList.reduce(function(prevValue, value, index) {
-        return prevValue + value;
-    });
-    console.log(sum);
-</script>
-				</textarea>
-                </div>
-                <hr/>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
 
         <section class="slide">
             <h1>Rouben Meschian</h1>
