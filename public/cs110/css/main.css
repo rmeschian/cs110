@@ -20,11 +20,15 @@ iframe {
     margin: 0
 }
 
+.CodeMirror pre.CodeMirror-cursor {
+    border-left: 2px solid white !important;
+}
+
 
 /* DECK */
 
 
-.deck-container .codeEditor {
+/*.deck-container .codeEditor {
     display: flex;
     flex-wrap: wrap;
 }
@@ -35,12 +39,12 @@ iframe {
     min-height: auto !important;
 }
 .deck-container .codeEditor .codeEditor_editor {
-    margin-right: 10px;    
+    margin-right: 10px;
 }
 .deck-container .codeEditor .codeEditor_target {
     padding: 10px 15px;
     background-color: white;
-}
+}*/
 
 .deck-container {
     /*font-family: "Helvetica Neue", sans-serif;*/
@@ -201,6 +205,11 @@ iframe {
 .deck-container .slide ::selection {
     background: #08455f;
     color: #fff;
+}
+.deck-container .homeBtn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
 }
 .deck-container .slide a, .deck-container .slide a:hover, .deck-container .slide a:focus, .deck-container .slide a:active, .deck-container .slide a:visited {
     color: #599;
