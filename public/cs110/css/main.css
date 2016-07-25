@@ -10,8 +10,7 @@
 body {
     padding: 1em 2em;
     height: 100%;
-    /*background: #ffffff;*/
-    /*font-size: 150%;*/
+    overflow-y: scroll;
 }
 
 iframe {
