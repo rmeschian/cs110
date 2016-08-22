@@ -31,27 +31,22 @@
             <h2>Introduction to Computer Science</h2>
         </section>
 
-        <section class="slide header center">
-            <h1>Canvas</h1>
-        </section>
 
 
         <section class="slide">
-            <h2>Canvas 2D - Draw a rectangle</h2>
+            <h2>Variable scope</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
-<canvas id="canvas" width="500" height="300"></canvas>
-
 <script>
-	const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("2d");
+    const a = 1;
+    console.log(a);
 
-    context.fillStyle = 'red';
-    context.fillRect(10, 10, 50, 50);
+    const f = function() {
+      console.log(a);
+    };
 
-    context.strokeStyle = 'green';
-    context.strokeRect(100, 10, 50, 50);
+    f();
 </script>
 				</textarea>
                 </div>
@@ -59,38 +54,6 @@
             </div>
         </section>
 
-
-        <section class="slide">
-            <h2>Canvas 2D - Draw data</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<canvas id="canvas" width="500" height="300"></canvas>
-
-<script>
-	const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("2d");
-
-    const point = {
-        x      : 10,
-        y      : 10,
-        width  : 50,
-        height : 50,
-        color  : 'red'
-    };
-
-    const draw = function() {
-        context.fillStyle = point.color;
-        context.fillRect(point.x, point.y, point.width, point.height);
-    };
-
-    draw();
-</script>
-				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
 
         <section class="slide header center">
             <h1>Rouben Meschian</h1>

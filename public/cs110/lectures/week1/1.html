@@ -32,22 +32,27 @@
         </section>
 
 
+        <section class="slide header center">
+            <h1>Objects</h1>
+        </section>
+
         <section class="slide">
-            <h2>Conditionals</h2>
+            <h2>Object - place to store data</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    let a = 1;
-    let b = 2;
+    const data = {
+        name         : 'Rouben Meschian',
+        age          : 35,
+        organization : {
+            name    : 'American University of Armenia',
+            city    : 'Yerevan',
+            country : 'Armenia'
+        }
+    };
 
-    if(a === b) {
-        console.log('a is the same as b');
-    } else if(a > b) {
-        console.log('a is greater than b');
-    } else {
-        console.log('a is less than b');
-    }
+    console.log(data.organization.name);
 </script>
 				</textarea>
                 </div>
@@ -57,20 +62,46 @@
 
 
         <section class="slide">
-            <h2>Function</h2>
+            <h2>Object - grouping of functions</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    // make a function, put it into a variable
-    let a = function() {
-        console.log('CS110');
-        console.log('Introduction to CS');
-        console.log('AUA');
+    const Math = {
+        pow        : function(base, exponent) {
+            if(exponent === 0) {
+                return 1;
+            }
+
+            return base * Math.pow(base, exponent - 1);
+        },
+        circleArea : function(r) {
+            return 3.14159265359 * Math.pow(r, 2);
+        }
     };
 
-    a(); // call the function
-    a(); // call the function again
+    console.log(Math.circleArea(10));
+</script>
+				</textarea>
+                </div>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide header center">
+            <h1>Arrays (lists)</h1>
+        </section>
+
+        <section class="slide">
+            <h2>Array</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    const list = [1, 2, 3, 4, 5];  // create a list
+    console.log(list.length);    // print the length of the list
+    console.log(list[2]);        // print a value at a specific index
 </script>
 				</textarea>
                 </div>
@@ -80,113 +111,27 @@
             <div class="slide-notes">
                 <h2>Notes</h2>
                 <ol>
-                    <li>code packaged up for reuse</li>
+                    <li>indexes start with 0</li>
+                    <li>.length is the last index + 1</li>
                 </ol>
             </div>
         </section>
 
+
         <section class="slide">
-            <h2>Function(with inputs)</h2>
+            <h2>Array - recursion</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    // make a function, put it into a variable
-    let a = function(a, b) {
-        console.log(a + b);
-    };
-
-    a(1, 2);     // call the function
-    a(100, 120); // call the function again
-</script>
-				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Function(with inputs) that return outputs</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    // make a function, put it into a variable
-    let add = function(a, b) {
-        return a + b;
-    };
-
-    // call the function, put result into a variable
-    let result = add(1, 2);
-
-    // print the result
-    console.log(result);
-</script>
-				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-
-        <section class="slide">
-            <h2>Printing 1 - 10</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    console.log(1);
-    console.log(2);
-    console.log(3);
-    console.log(4);
-    console.log(5);
-    console.log(6);
-    console.log(7);
-    console.log(8);
-    console.log(9);
-    console.log(10);
-</script>
-				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <h2>Printing 1 - 10 using a function</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let printNumbers = function(count) {
-        if(count > 10) // termination condition
+    const myList = [1, 2, 3, 4, 5];  // create a list
+    const print = function(index, list) {
+        if(index === list.length)
             return;
-
-        console.log(count);
-        printNumbers(count + 1); // call self (loop)
+        console.log(list[index]);
+        print(index + 1, list);
     };
-    printNumbers(1);
-</script>
-				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <h2>Function variable scoping</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<script>
-    let f = function(a) {
-        let f2 = function(b) {
-            return a + b;
-        };
-        return f2(2);
-    };
-    console.log(f(1));
+    print(0, myList);
 </script>
 				</textarea>
                 </div>
@@ -196,17 +141,14 @@
 
 
         <section class="slide">
-            <h2>Functions are values</h2>
+            <h2>Array - forEach</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    let f = function(a, b, f2) {
-        f2(a + b);
-    };
-
-    f(2, 10, function(result) {
-       console.log(result);
+    const myList = [1, 2, 3, 4, 5];  // create a list
+    myList.forEach(function(value, index) {
+       console.log(value);
     });
 </script>
 				</textarea>
@@ -216,20 +158,19 @@
         </section>
 
 
-
         <section class="slide">
-            <h2>Functions are values 2</h2>
+            <h2>Array - map</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    let f = function(a) {
-        return function(b) {
-            return a + b;
-        };
-    };
-    let f2 = f(1);
-    console.log(f2(3));
+    const myList = [1, 2, 3, 4, 5];  // create a list
+    const newList = myList.map(function(value, index) {
+        return value * 100;
+    });
+    newList.forEach(function(value, index) {
+        console.log(value);
+    });
 </script>
 				</textarea>
                 </div>
@@ -239,30 +180,44 @@
 
 
         <section class="slide">
-            <h2>Functions are composable</h2>
+            <h2>Array - filter</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    let pow = function(base, exponent) {
-        if(exponent === 0) {
-            return 1;
-        }
-
-        return base * pow(base, exponent-1);
-    };
-
-    let circleArea = function(r) {
-        return 3.14159265359 * pow(r, 2);
-    };
-
-    console.log(circleArea(10));
+    const myList = [1, 2, 3, 4, 5];  // create a list
+    const newList = myList.filter(function(value, index) {
+        return value > 3;
+    });
+    newList.forEach(function(value, index) {
+        console.log(value);
+    });
 </script>
 				</textarea>
                 </div>
                 <div class="codeEditor_target"></div>
             </div>
         </section>
+
+
+        <section class="slide">
+            <h2>Array - reduce</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<script>
+    const myList = [1, 2, 3, 4, 5];  // create a list
+    const sum = myList.reduce(function(prevValue, value, index) {
+        return prevValue + value;
+    });
+    console.log(sum);
+</script>
+				</textarea>
+                </div>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
 
         <section class="slide header center">
             <h1>Rouben Meschian</h1>

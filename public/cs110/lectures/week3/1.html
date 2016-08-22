@@ -32,26 +32,40 @@
         </section>
 
         <section class="slide header center">
-            <h1>Canvas</h1>
+            <h1>Cryptography</h1>
+            <p>plain text -> encryption -> ciphertext</p>
+            <p>ciphertext -> decryption -> plain text</p>
+        </section>
+
+        <section class="slide">
+            <h1>400 BC Spartan scytale cipher</h1>
+            <p>Letters written on long strip of leather - wrap around cylinder -  thickness of wood is the key</p>
+        </section>
+
+        <section class="slide">
+            <h1>Julius Caesar’s substitution cipher</h1>
+            <p>Shift letters to the right by N</p>
+        </section>
+
+        <section class="slide">
+            <h1>Caesar Cipher</h1>
+            <h2><p><em>c<sub>i</sub></em> = (<em>p<sub>i</sub></em> + <em>k</em>) % 26</p></h2>
+            <ul>
+                <li>k: secret key</li>
+                <li>p: original text</li>
+                <li>c: ciphered text</li>
+            </ul>
         </section>
 
 
+
         <section class="slide">
-            <h2>Canvas 2D - Draw a rectangle</h2>
+            <h2>Conditionals</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
-<canvas id="canvas" width="500" height="300"></canvas>
-
 <script>
-	const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("2d");
-
-    context.fillStyle = 'red';
-    context.fillRect(10, 10, 50, 50);
-
-    context.strokeStyle = 'green';
-    context.strokeRect(100, 10, 50, 50);
+    TODO
 </script>
 				</textarea>
                 </div>
@@ -60,37 +74,7 @@
         </section>
 
 
-        <section class="slide">
-            <h2>Canvas 2D - Draw data</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<canvas id="canvas" width="500" height="300"></canvas>
 
-<script>
-	const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("2d");
-
-    const point = {
-        x      : 10,
-        y      : 10,
-        width  : 50,
-        height : 50,
-        color  : 'red'
-    };
-
-    const draw = function() {
-        context.fillStyle = point.color;
-        context.fillRect(point.x, point.y, point.width, point.height);
-    };
-
-    draw();
-</script>
-				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
 
         <section class="slide header center">
             <h1>Rouben Meschian</h1>
