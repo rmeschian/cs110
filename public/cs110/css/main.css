@@ -85,12 +85,12 @@ iframe {
 .deck-container .slide.center {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    top: 45%;
+    transform: translateX(-50%) translateY(-45%);
 }
-.deck-container .slide.header {
-    color: #4987ea;
-}
+/*.deck-container .slide.header {*/
+    /*color: #4987ea;*/
+/*}*/
 .slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6 {
     font-weight: 100;
 }

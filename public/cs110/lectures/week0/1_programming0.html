@@ -62,7 +62,7 @@
 
 
         <section class="slide">
-            <h2>Values</h2>
+            <h2></h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
     				<textarea>
@@ -78,18 +78,18 @@
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
-                    <script>
-                        // number
-                        console.log(110);
+<script>
+    // number
+    console.log(110);
 
-                        // boolean (true/false)
-                        console.log(true);
-                        console.log(false);
+    // boolean (true/false)
+    console.log(true);
+    console.log(false);
 
-                        // string
-                        console.log('cs110');
-                        console.log(typeof('cs110'));
-                    </script>
+    // string
+    console.log('cs110');
+    console.log(typeof('cs110'));
+</script>
 				</textarea>
                 </div>
                 <div class="codeEditor_target"></div>
@@ -165,7 +165,7 @@
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    let a = 'hello world'; // create a variable, put a string into it
+    const a = 'hello world'; // create a variable, put a string into it
     console.log(a);        // print the string
 </script>
 				</textarea>
@@ -180,6 +180,25 @@
                     <li>put a value into it using '='</li>
                 </ol>
             </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>Variable naming rules</h2>
+
+            <ul>
+                <li>Contain letters, digits, underscores, and dollar signs.</li>
+                <li>Begin with a letter, _ or $ (not a number)</li>
+                <li>Case sensitive (y and Y are different variables)</li>
+                <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2>Boolean operators - AND (&&)</h2>
+
+            <img src="../../img/thumbUp.jpg" alt=""> && <img src="../../img/thumbUp.jpg" alt=""> = <img src="../../img/thumbUp.jpg" alt="">
         </section>
 
 
@@ -228,8 +247,8 @@
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    let a = 1;
-    let b = 2;
+    const a = 1;
+    const b = 2;
 
     if(a === b) {
         console.log('a is the same as b');
