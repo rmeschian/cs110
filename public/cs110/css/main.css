@@ -8,13 +8,13 @@
 }
 
 .thumbSize{
-  height: 170px;
-  width: 200px;
+  height: 110px;
+  width: 135px;
   vertical-align: middle;
 }
 
 .boolean_op_fonts{
-  font-size: 120pt;
+  font-size: 80pt;
   vertical-align: middle;
   margin: 15px;
 }
