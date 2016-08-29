@@ -7,6 +7,18 @@
     display: none
 }
 
+.thumbSize{
+  height: 110px;
+  width: 135px;
+  vertical-align: middle;
+}
+
+.boolean_op_fonts{
+  font-size: 80pt;
+  vertical-align: middle;
+  margin: 15px;
+}
+
 body {
     padding: 1em 2em;
     height: 100%;
