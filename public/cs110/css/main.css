@@ -89,7 +89,7 @@ iframe {
     transform: translateX(-50%) translateY(-50%);
 }
 .deck-container .slide.header {
-    color: #4987ea;
+    /*color: #4987ea;*/
 }
 .slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6 {
     font-weight: 100;
