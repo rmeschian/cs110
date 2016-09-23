@@ -8,6 +8,7 @@ require.config({
         materialize      : "../bower_components/Materialize/bin/materialize",
         codemirror       : "lib/codemirror/lib/codemirror",
         xmlMod           : "lib/codemirror/mode/xml/xml",
+        hammerjs         : "../bower_components/Materialize/js/hammer.min",
         jsMod            : "lib/codemirror/mode/javascript/javascript",
         cssMod           : "lib/codemirror/mode/css/css",
         htmlmixedMod     : "lib/codemirror/mode/htmlmixed/htmlmixed",
@@ -17,8 +18,8 @@ require.config({
         xmlMod           : {
             deps : ["codemirror"]
         },
-        materialize: {
-            deps: ['jquery']
+        materialize      : {
+            deps : ['jquery']
         },
         jsMod            : {
             deps : ["codemirror"]
@@ -47,43 +48,43 @@ require([
     "cssMod",
     "htmlmixedMod",
     "jqueryCodemirror"
-], function (hasher) {
+], function(hasher) {
 
 
     var doc = $(document),
         backBtns = $('.backBtn'),
         forwardBtns = $('.forwardBtn');
 
-    doc.ready(function () {
+    doc.ready(function() {
 
         var curIndex,
-            esp = function (e) {
+            esp = function(e) {
                 e.stopPropagation();
             },
             container = $('.deck-container'),
             pages = container.find('.slide').hide();
 
         $('.codeEditor').codemirror({
-            mode           : "text/html",
-            tabMode        : "indent",
+            mode    : "text/html",
+            tabMode : "indent",
 
             defaultStyles  : ['../../bower_components/bootstrap/dist/css/bootstrap.css'],
             defaultScripts : ["../../bower_components/jquery/dist/jquery.js"],
 
-            theme          : "material"
+            theme : "material"
         });
 
 
         function transitionTo(newPage, oldPage) {
-            if (oldPage)
+            if(oldPage)
                 $(oldPage).hide();
-            if (newPage)
+            if(newPage)
                 $(newPage).slideDown().codemirror('resize');
         }
 
         function handleChanges(newHash, oldHash) {
 
-            if (newHash === '' || newHash === '/')
+            if(newHash === '' || newHash === '/')
                 newHash = 0;
 
             var oldIndex = curIndex;
@@ -95,7 +96,7 @@ require([
 
         function updateNavBtns() {
             backBtns.css('display', curIndex > 0 ? '' : 'none');
-            forwardBtns.css('display', curIndex < pages.length-1 ? '' : 'none')
+            forwardBtns.css('display', curIndex < pages.length - 1 ? '' : 'none')
         }
 
 
@@ -116,19 +117,19 @@ require([
 
 
         /* Remove any previous bindings, and rebind key events */
-        doc.unbind('keydown.deck').bind('keydown.deck', function (e) {
-            if (e.keyCode === 39) {
-                if (pages.length > (curIndex + 1))
+        doc.unbind('keydown.deck').bind('keydown.deck', function(e) {
+            if(e.keyCode === 39) {
+                if(pages.length > (curIndex + 1))
                     hasher.setHash(curIndex + 1);
                 e.preventDefault();
             }
-            else if (e.keyCode === 37) {
-                if (curIndex > 0)
+            else if(e.keyCode === 37) {
+                if(curIndex > 0)
                     hasher.setHash(curIndex - 1);
                 e.preventDefault();
             }
         })
-            /* Stop propagation of key events within editable elements */
+        /* Stop propagation of key events within editable elements */
             .undelegate('input, textarea, select, button, meter, progress, [contentEditable]', 'keydown', esp)
             .delegate('input, textarea, select, button, meter, progress, [contentEditable]', 'keydown', esp);
 
