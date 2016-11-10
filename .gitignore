@@ -1,6 +1,10 @@
 build/
 .settings
 .idea
+.metadata
+.recommenders
+bin
+RemoteSystemsTempFiles
 npm-debug.log
 notes.txt
 slides

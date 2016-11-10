@@ -31,27 +31,29 @@
             <h2>Introduction to Computer Science</h2>
         </section>
 
-        <section class="slide header center">
-            <h1>Canvas</h1>
+
+        <section class="slide center">
+            <h1>JSON</h1>
         </section>
 
 
         <section class="slide">
-            <h2>Canvas 2D - Draw a rectangle</h2>
+            <h2>JSON Example</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
-<canvas id="canvas" width="500" height="300"></canvas>
-
 <script>
-	let canvas = document.getElementById("canvas");
-    let context = canvas.getContext("2d");
+    const person = {
+        name : 'Joe Shmoeyan',
+        age  : 44
+    };
 
-    context.fillStyle = 'red';
-    context.fillRect(10, 10, 50, 50);
+    const json = JSON.stringify(person);
+    console.log(json);
 
-    context.strokeStyle = 'green';
-    context.strokeRect(100, 10, 50, 50);
+    const deserializedJson = JSON.parse(json);
+
+    console.log(deserializedJson);
 </script>
 				</textarea>
                 </div>
@@ -59,38 +61,6 @@
             </div>
         </section>
 
-
-        <section class="slide">
-            <h2>Canvas 2D - Draw data</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<canvas id="canvas" width="500" height="300"></canvas>
-
-<script>
-	let canvas = document.getElementById("canvas");
-    let context = canvas.getContext("2d");
-
-    let point = {
-        x      : 10,
-        y      : 10,
-        width  : 50,
-        height : 50,
-        color  : 'red'
-    };
-
-    let draw = function() {
-        context.fillStyle = point.color;
-        context.fillRect(point.x, point.y, point.width, point.height);
-    };
-
-    draw();
-</script>
-				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
 
         <section class="slide header center">
             <h1>Rouben Meschian</h1>

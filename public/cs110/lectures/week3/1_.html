@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=1024, user-scalable=no">
+        <meta name="author" content="Rouben Meschian">
+        <title>CS110</title>
+
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../../bower_components/Materialize/bin/materialize.css">
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <link rel="stylesheet" href="../../js/lib/codemirror/theme/material.css">
+
+    </head>
+    <body class="deck-container">
+
+        <div class="navButtonBar">
+            <a class="backBtn btn-floating"><i class="material-icons">keyboard_arrow_left</i></a>
+            <a class="forwardBtn btn-floating"><i class="material-icons">keyboard_arrow_right</i></a>
+            <a class="homeBtn btn-floating" href="../../index.html"><i class="material-icons">home</i></a>
+        </div>
+
+
+        <!-- Begin slides. Just make elements with a class of slide. -->
+
+
+        <section class="slide header center">
+            <h1>CS110</h1>
+            <h2>Introduction to Computer Science</h2>
+        </section>
+
+        <section class="slide">
+            <h2>DOM</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<ul id="container">
+    <li id="template">
+        <h2></h2>
+        <img>
+    </li>
+</ul>
+
+<script>
+    let poets = [
+        {
+            name  : 'Paruyr Sevak',
+            image : 'https://upload.wikimedia.org/wikipedia/en/d/d0/Paruyr_Sevak.jpg'
+        },
+        {
+            name  : 'Avetik Isahakyan',
+            image : 'https://upload.wikimedia.org/wikipedia/en/f/fb/Avetik_Isahakyan.jpg'
+        },
+        {
+            name  : 'Yeghishe Charents',
+            image : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Yeghishe_Charents_Armenian_poet.jpg/200px-Yeghishe_Charents_Armenian_poet.jpg'
+        }
+    ];
+
+    let ul = document.getElementById('container');
+    let template = document.getElementById('template'); // find template
+    ul.removeChild(template); // remove the template from the dom
+
+    poets.forEach(function(poetObj) {
+        var node = template.cloneNode(true);
+        node.querySelector('h2').innerText = poetObj.name;
+        node.querySelector('img').src = poetObj.image;
+        ul.appendChild(node);
+    });
+</script>
+				</textarea>
+                </div>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>DOM</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<ul id="container">
+    <li id="template">
+        <h2></h2>
+        <img>
+    </li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+<script>
+    let ul = document.getElementById('container');
+    let template = document.getElementById('template'); // find template
+    ul.removeChild(template); // remove the template from the dom
+
+    $.ajax({
+        url      : "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+        type     : 'get',
+        dataType : 'json',
+        data     : {
+            tags    : "armenia",
+            tagmode : "any",
+            format  : "json"
+        }
+    }).then(function(data) {
+        data.items.forEach(function(item) {
+            var node = template.cloneNode(true);
+            node.querySelector('h2').innerText = item.title;
+            node.querySelector('img').src = item.media.m;
+            ul.appendChild(node);
+        });
+    });
+</script>
+				</textarea>
+                </div>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide">
+            <h2>DOM</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+
+<form id="searchForm">
+    <input type="text" id="searchTextBox" placeholder="Search...">
+    <button type="submit">Search</button>
+</form>
+
+<ul id="container">
+    <li id="template">
+        <h2></h2>
+        <img>
+    </li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+<script>
+    let ul = document.getElementById('container');
+    let template = document.getElementById('template'); // find template
+    ul.removeChild(template); // remove the template from the dom
+
+    let form = document.getElementById('searchForm');
+    let searchTextBox = document.getElementById('searchTextBox');
+
+    let runSearch = function(searchText) {
+        $.ajax({
+            url      : "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+            type     : 'get',
+            dataType : 'json',
+            data     : {
+                tags    : searchText,
+                tagmode : "any",
+                format  : "json"
+            }
+        }).then(function(data) {
+            ul.innerHTML = ''; // clear old list
+            data.items.forEach(function(item) {
+                var node = template.cloneNode(true);
+                node.querySelector('h2').innerText = item.title;
+                node.querySelector('img').src = item.media.m;
+                ul.appendChild(node);
+            });
+        });
+    };
+
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        runSearch(searchTextBox.value);
+    };
+</script>
+				</textarea>
+                </div>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
+
+
+        <section class="slide header center">
+            <h1>Rouben Meschian</h1>
+            <h4>rmeschian@gmail.com</h4>
+        </section>
+
+        <!-- End slides. -->
+
+
+        <script data-main="../../js/main" src="../../bower_components/requirejs/require.js"></script>
+
+    </body>
+</html>

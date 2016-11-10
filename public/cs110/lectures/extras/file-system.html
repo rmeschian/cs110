@@ -31,28 +31,32 @@
             <h2>Introduction to Computer Science</h2>
         </section>
 
-        <section class="slide header center">
-            <h1>Canvas</h1>
+
+        <section class="slide center">
+            <h1>File System</h1>
+            <h4>The way files are organized</h4>
         </section>
 
 
         <section class="slide">
-            <h2>Canvas 2D - Draw a rectangle</h2>
+            <img src="../../img/file-system1.png" alt="">
+        </section>
+
+        <section class="slide center">
+            <h1>File Path</h1>
+        </section>
+
+        <section class="slide center">
+            <h1>Relative Path</h1>
+        </section>
+
+        <section class="slide">
+            <h2>Example</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
-<canvas id="canvas" width="500" height="300"></canvas>
-
-<script>
-	const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("2d");
-
-    context.fillStyle = 'red';
-    context.fillRect(10, 10, 50, 50);
-
-    context.strokeStyle = 'green';
-    context.strokeRect(100, 10, 50, 50);
-</script>
+<img src="/cs110/img/puppy.jpg" style="height: 100px">
+<img src="../../img/puppy.jpg"  style="height: 100px">
 				</textarea>
                 </div>
                 <div class="codeEditor_target"></div>
@@ -60,37 +64,6 @@
         </section>
 
 
-        <section class="slide">
-            <h2>Canvas 2D - Draw data</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-				<textarea>
-<canvas id="canvas" width="500" height="300"></canvas>
-
-<script>
-	const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("2d");
-
-    const point = {
-        x      : 10,
-        y      : 10,
-        width  : 50,
-        height : 50,
-        color  : 'red'
-    };
-
-    const draw = function() {
-        context.fillStyle = point.color;
-        context.fillRect(point.x, point.y, point.width, point.height);
-    };
-
-    draw();
-</script>
-				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
-        </section>
 
         <section class="slide header center">
             <h1>Rouben Meschian</h1>
