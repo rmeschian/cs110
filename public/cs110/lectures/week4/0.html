@@ -35,6 +35,44 @@
             <h1>Canvas</h1>
         </section>
 
+        <section class="slide">
+            <h2>DOM - basics</h2>
+            <div class="codeEditor">
+                <div class='codeEditor_editor'>
+				<textarea>
+<html>
+    <head>
+        <style>
+            #container {
+                padding : 10px;
+                margin  : 10px;
+                border  : solid 1px lightgray
+            }
+            #hello {
+                color : darkred;
+            }
+            .puppy {
+                width : 200px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="container">
+            <h1 id="hello">hello puppy</h1>
+            <p>soooo cute!</p>
+            <img class="puppy" src="http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-21.jpg">
+        </div>
+        <script>
+            // TODO
+        </script>
+	</body>
+</html>
+				</textarea>
+                </div>
+                <div class="codeEditor_target"></div>
+            </div>
+        </section>
 
         <section class="slide">
             <h2>Canvas 2D - Draw a rectangle</h2>
@@ -44,8 +82,8 @@
 <canvas id="canvas" width="500" height="300"></canvas>
 
 <script>
-	let canvas = document.getElementById("canvas");
-    let context = canvas.getContext("2d");
+	const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
 
     context.fillStyle = 'red';
     context.fillRect(10, 10, 50, 50);
@@ -68,10 +106,10 @@
 <canvas id="canvas" width="500" height="300"></canvas>
 
 <script>
-	let canvas = document.getElementById("canvas");
-    let context = canvas.getContext("2d");
+	const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
 
-    let point = {
+    const point = {
         x      : 10,
         y      : 10,
         width  : 50,
@@ -79,7 +117,7 @@
         color  : 'red'
     };
 
-    let draw = function() {
+    const draw = function() {
         context.fillStyle = point.color;
         context.fillRect(point.x, point.y, point.width, point.height);
     };
@@ -101,10 +139,10 @@
 <canvas id="canvas" width="500" height="300"></canvas>
 
 <script>
-	let canvas = document.getElementById("canvas");
-    let context = canvas.getContext("2d");
+	const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
 
-    let points = [
+    const points = [
         {
             x      : 0,
             y      : 50,
@@ -128,11 +166,21 @@
         }
     ];
 
-    let draw = function() {
-        points.forEach(function(point) {
+    const draw = function() {
+
+        const forEach = function(arr, idx) {
+            if(idx === arr.length)
+                return;
+
+            const point = arr[idx];
+
             context.fillStyle = point.color;
             context.fillRect(point.x, point.y, point.width, point.height);
-        });
+
+            forEach(arr, idx + 1);
+        };
+
+        forEach(points, 0);
     };
 
     draw();
@@ -152,12 +200,12 @@
 <canvas id="canvas" width="500" height="300"></canvas>
 
 <script>
-	let canvas = document.getElementById("canvas");
-    let context = canvas.getContext("2d");
+	const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
 
     let xd = 1;
 
-    let points = [
+    const points = [
         {
             x      : 0,
             y      : 50,
@@ -181,25 +229,46 @@
         }
     ];
 
-    let draw = function() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        points.forEach(function(point) {
-            context.fillStyle = point.color;
-            context.fillRect(point.x, point.y, point.width, point.height);
+    const forEach = function(arr, func) {
+        const helper = function(idx) {
+            if(idx === arr.length)
+                return;
+
+            func(arr[idx]);
+            helper(idx + 1);
+        };
+
+        helper(0);
+    };
+
+
+
+    const updateData = function() {
+        forEach(points, function(point) {
             point.x += xd;
         });
     };
 
-    let animate = function() {
+    const draw = function() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        forEach(points, function(point) {
+            context.fillStyle = point.color;
+            context.fillRect(point.x, point.y, point.width, point.height);
+        });
+    };
+
+    const animate = function() {
+        updateData();
         draw();
         window.setTimeout(animate, 10);
     };
     animate();
 
 
-    $('#canvas').on('mousedown', function(e){
+    canvas.addEventListener('click', function(e) {
         xd *= -1;
-        // e.clientX and e.clientY
+
+        console.log(e.clientX + ', ' + e.clientY);
     });
 </script>
 				</textarea>

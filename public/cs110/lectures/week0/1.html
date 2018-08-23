@@ -46,18 +46,34 @@
             <h3>Brendan Eich</h3>
         </section>
 
+        <section class="slide center">
+            <h1>ECMAScript</h1>
+            <h5>European Computer Manufacturer's Association</h5>
+        </section>
+
 
         <section class="slide">
-            <h2>Javascript in html</h2>
-            <div class="codeEditor">
-                <div class='codeEditor_editor'>
-    				<textarea>
-    alert('hello cs110');
-    				</textarea>
-                </div>
-                <div class="codeEditor_target"></div>
-            </div>
+            <h3>Running Javascript in HTML</h3>
+            <pre>
+    &lt;script&gt;
+        // code goes here
+    &lt;/script&gt;
+            </pre>
+
+            <p>OR</p>
+
+            <pre>
+    &lt;script src="path/to/your/code.js"&gt;&lt;/script&gt;
+            </pre>
         </section>
+    
+    
+    
+        <section class="slide header center">
+            <h1>console.log(   ...put stuff here... );</h1>
+        </section>
+
+        
 
         <section class="slide">
             <h2>Values</h2>
@@ -146,13 +162,13 @@
         </section>
 
         <section class="slide">
-            <h2>Named values (variables)</h2>
+            <h2>Named values</h2>
             <div class="codeEditor">
                 <div class='codeEditor_editor'>
 				<textarea>
 <script>
-    const a = 'hello world'; // create a variable, put a string into it
-    console.log(a);        // print the string
+    const a = 'hello world'; // create a constant, put a string into it
+    console.log(a);          // print the string
 </script>
 				</textarea>
                 </div>
@@ -161,8 +177,8 @@
             <div class="slide-notes">
                 <h2>Notes</h2>
                 <ol>
-                    <li>variable: using a name to refer to a value</li>
-                    <li>create a variable using 'const'</li>
+                    <li>constant: using a name to refer to a value</li>
+                    <li>create a constant using 'const'</li>
                     <li>put a value into it using '='</li>
                 </ol>
             </div>
@@ -170,12 +186,12 @@
 
 
         <section class="slide">
-            <h2>Variable naming rules</h2>
+            <h2>Value naming rules</h2>
 
             <ul>
                 <li>Contain letters, digits, underscores, and dollar signs.</li>
                 <li>Begin with a letter, _ or $ (not a number)</li>
-                <li>Case sensitive (y and Y are different variables)</li>
+                <li>Case sensitive (y and Y are different)</li>
                 <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
             </ul>
         </section>

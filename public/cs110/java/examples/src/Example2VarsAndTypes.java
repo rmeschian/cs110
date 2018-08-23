@@ -1,16 +1,22 @@
 
 // Here is a list of all primitives in Java:
-// byte (number, 1 byte)
-// short (number, 2 bytes)
-// int (number, 4 bytes)
-// long (number, 8 bytes)
-// float (float number, 4 bytes)
-// double (float number, 8 bytes)
+// byte (number, 1 byte, 128 to -127)
+// short (number, 2 bytes, -32,768 to 32,767)
+// int (number, 4 bytes, -2,147,483,648 to 2,147,483,647)
+// long (number, 8 bytes, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,808)
+// float (float number, 4 bytes, 7 decimal digits)
+// double (float number, 8 bytes, 16 decimal digits)
 // char (a character, 2 bytes)
 // boolean (true or false, 1 byte)
 
 public class Example2VarsAndTypes {
+
 	public static void main(String[] args) {
+		
+		// string
+		String name = "Joe";
+		
+		System.out.println(name);
 		
 		// numbers
 		double a = 4.5;
@@ -25,9 +31,9 @@ public class Example2VarsAndTypes {
 		System.out.println(d);
 		
 		// boolean
-		boolean bb = true;
-		if(bb) {
-			System.out.println("The value of bb is: " + bb);
+		boolean isAwesome = true;
+		if(isAwesome) {
+			System.out.println("The value of bb is: " + isAwesome);
 		}
 		
 		
